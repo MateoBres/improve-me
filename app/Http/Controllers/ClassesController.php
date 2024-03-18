@@ -23,7 +23,7 @@ class ClassesController extends Controller
      */
     public function create()
     {
-        return 'Form per la creazione di un corso';
+        return response()->view('classes.show');
     }
 
     /**
@@ -31,9 +31,8 @@ class ClassesController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Form per la creazione di un corso';
-        // TODO: sviluppero più tardi
-        // return response()->redirectToRoute('dettaglio di un corso');
+//        return response()->view('classes.show');
+         return response()->redirectToRoute('classes.show');
     }
 
     /**
@@ -41,15 +40,7 @@ class ClassesController extends Controller
      */
     public function show(string $class)
     {
-        return sprintf('Dettaglio di un corso %s', str_replace('-',' ', $class));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        return 'Modifica di un corso';
+        return response()->view('classes.show');
     }
 
     /**
@@ -57,9 +48,8 @@ class ClassesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return 'Vista di dettaglio corso';
-        // TODO: sviluppero più tardi
-        // return response()->redirectToRoute('dettaglio di un corso');
+//        return response()->view('classes.show');
+        return response()->redirectToRoute('classes.show');
     }
 
     /**
@@ -67,6 +57,6 @@ class ClassesController extends Controller
      */
     public function destroy(string $id)
     {
-        return response()->redirectToRoute('lista dei corsi');
+        return response()->redirectToRoute('classes.index');
     }
 }
